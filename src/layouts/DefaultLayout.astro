@@ -6,11 +6,11 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 
 const {
-  title = 'Astro',
-  description = 'A starter project with accessibility features using Astro static site builder. Contains accessible landmarks, skip links, a dark mode color scheme, better focus outline and keyboard menu navigation.',
+  title = 'Nexelab',
+  description = "Explorez l'expertise de NEXELAB en développement d'applications mobiles, web et IoT. Transformez vos idées en réalité digitale avec nos solutions sur mesure. Découvrez nos services dès aujourd'hui !",
   url,
-  image = '/social-preview-image.png',
-  author = 'Mark Teekman',
+  image = '/site-preview-image.png',
+  author = 'Vincent Verges',
 } = Astro.props
 ---
 
@@ -21,7 +21,7 @@ const {
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!-- favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/public/favicon/favicon.png" />
 
     <SiteMeta
       title={title}
@@ -62,7 +62,7 @@ const {
         --font-color: var(--neutral-100);
         --action-color: var(--secondary-100);
         --action-color-state: var(--secondary-500);
-        --background: var(--dark-100);
+        --background: #000000;
         --primary-background: var(--primary-500);
         --neutral-background: var(--neutral-900);
       }

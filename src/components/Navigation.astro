@@ -2,14 +2,14 @@
 import ResponsiveToggle from './ResponsiveToggle.astro'
 import { DarkMode } from 'accessible-astro-components'
 import { Image } from 'astro:assets'
-import logo from '../assets/img/logo.svg'
+import logo from '/logo-nexelab.png'
 ---
 
 <div id="main-navigation" class="is-desktop py-8">
   <div class="container">
     <a href="/" class="flex items-center gap-2 !no-underline">
-      <Image src={logo} alt="Your Logo" width="47" height="37" />
-      <span class="font-bold">Accessible Astro</span>
+      <Image src=/logo-nexelab.png alt="Nexelab" width="200" height="37" />
+      
     </a>
     <div class="wrapper">
       <nav class="desktop-menu" aria-label="Main navigation desktop">
@@ -290,9 +290,7 @@ import logo from '../assets/img/logo.svg'
         .has-dropdown > button:hover,
         .has-dropdown > button:focus {
           text-decoration: underline;
-          text-decoration-thickness: 1px;
-          text-decoration-style: wavy;
-          text-underline-offset: 7px;
+          text-decoration-thickness: 2px;
         }
 
         .is-active {
@@ -332,13 +330,13 @@ import logo from '../assets/img/logo.svg'
         padding: 0;
         margin-top: -1px;
         border: none;
-        color: var(--action-color);
+        color: white;
 
         &:hover {
-          color: var(--action-color-state);
+          color: white;
 
           &::after {
-            border-color: var(--action-color-state);
+            border-color: white;
           }
         }
 

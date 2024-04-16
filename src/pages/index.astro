@@ -2,72 +2,116 @@
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import Hero from '../components/Hero.astro'
 import Feature from '../components/Feature.astro'
-import Counter from '../components/Counter.astro'
 import ContentMedia from '../components/ContentMedia.astro'
+import { Icon } from 'astro-icon/components'
+import CallToAction from '../components/CallToAction.astro'
 ---
 
-<DefaultLayout title="Home">
+<DefaultLayout title="Nexelab Home">
   <Hero />
+  <ContentMedia imgSrc="/ideo-to-reality.jpg">
+    <h2>Innovations Numériques</h2>
+    <p class="text-2xl">
+      Nous croyons en la puissance de la technologie pour transformer les idées en réalité.<br><br>
+      Notre équipe talentueuse de développeurs expérimentés combine expertise technique et créativité pour créer des solutions adaptées à vos besoins spécifiques. 
+    </p>
+    <div class="flex flex-col gap-3 min-[500px]:flex-row">
+      <a class="button has-icon" href="https://calendly.com/vincent-verges/30min">
+        <Icon name="ion:call" />
+        Un projet? Discutons-en!
+      </a>
+    </div>
+  </ContentMedia>
   <section class="my-64">
     <div class="container">
-      <h2 class="mb-16 text-6xl">Features</h2>
+      <h2 class="mb-16 text-6xl">Nos Compétences</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature icon="mdi:tailwind" title="Tailwind CSS">
-          Use the power of Tailwind to greatly improve your productivity and enhance your developer workflow.
+        <Feature icon="mdi:cellphone" title="Application Mobile">
+          Découvrez notre expertise en développement d'applications mobiles. Chez <b>NEXELAB</b>, nous concevons des applications <b>iOS</b> et <b>Android</b> captivantes, sur mesure pour vos besoins. Transformez vos idées en réalité mobile avec nous.
+          <span class="logo-tech">
+            <img src="/logo/apple.png">
+            <img src="/logo/android.png">
+            <img src="/logo/unity.png">
+            </span>
+          <div class="flex flex-col gap-3 min-[500px]:flex-row">
+            <a class="button has-icon color-secondary" href="/mobile">
+              En savoir plus
+            </a>
+          </div>
         </Feature>
-        <Feature icon="mdi:wheelchair-accessibility" title="a11y Components">
-          17 components and counting, all tried and tested for the most optimal accessible experience for your visitors.
+        <Feature icon="mdi:robot-mower" title="Objets Connectés">
+          Découvrez notre expertise en Internet des Objets. Chez <b>NEXELAB</b>, nous créons des solutions <b>connectées sur mesure</b> pour transformer vos appareils en intelligents. Avec notre savoir-faire en <b>IoT</b>, nous réalisons vos projets les plus innovants.
+          <span class="logo-tech">
+          <img src="/logo/raspberry.png" alt="Raspberry Pi">
+          <img src="/logo/arduino.png" alt="Arduino">
+          <img src="/logo/nvidia.png" alt="Nvidia Vision">
+          <img src="/logo/STM.png" alt="STMElectronics">
+          </span>
+          <div class="flex flex-col gap-3 min-[500px]:flex-row">
+            <a class="button has-icon color-secondary" href="/iot">
+              En savoir plus
+            </a>
+          </div>
         </Feature>
-        <Feature icon="mdi:looks" title="Prettier">
-          Less worry about formatting your code, let the Astro Prettier integration do the heavy lifting.
-        </Feature>
-        <Feature icon="mdi:eslint" title="ESLint">
-          Lint your code with strict a11y settings to ensure you stay on track with the WCAG standards.
-        </Feature>
-        <Feature icon="mdi:book-open-page-variant" title="Blog">
-          This theme comes with a fully integrated blog, dynamic pages and SEO optimization.
-        </Feature>
-        <Feature icon="mdi:language-markdown" title="Markdown & MDX">
-          Easily use .md and .mdx pages to build your websites or use it with Netlify CMS.
-        </Feature>
-        <Feature icon="mdi:theme-light-dark" title="Dark mode">
-          Fully integrated Dark mode gives your users the choice for their favorite viewing mode.
-        </Feature>
-        <Feature icon="mdi:cog" title="Design System">
-          The theme offers some very handy utilities to help you build your website faster.
-        </Feature>
-        <Feature icon="mdi:lighthouse" title="Lighthouse Scores">
-          Excellent lighthouse scores means your website will load faster and get better SEO rankings.
+        <Feature icon="mdi:web" title="Application Web">
+          Explorez notre savoir-faire en développement d'applications web. Chez <b>NEXELAB</b>, nous concevons des solutions <b>web</b> sur mesure pour répondre à vos besoins uniques. Nous transformons vos idées en réalité digitale.
+          <span class="logo-tech">
+            <img src="/logo/astro.png" alt="Astro.build">
+            <img src="/logo/vuejs.png" alt="VueJs Application">
+            <img src="/logo/ktor.png" alt="Kotlin Web Application">
+            <img src="/logo/symfony.png" alt="Symfony">
+            <img src="/logo/laravel.png" alt="Laravel">
+            </span>
+          <div class="flex flex-col gap-3 min-[500px]:flex-row">
+            <a class="button has-icon color-secondary" href="/web">
+              En savoir plus
+            </a>
+          </div>
         </Feature>
       </div>
     </div>
   </section>
-  <ContentMedia imgSrc="/accessible-components.webp">
-    <h2>Accessible Components</h2>
+  <ContentMedia imgSrc="/nexterrain/nexterrain-1.WEBP" reverseImg={true}>
+    <h2>Nexterrain</h2>
     <p class="text-2xl">
-      This theme provides plenty of tried and tested Accessible Astro Components. Some are native to this theme and a
-      lot of others are integrated using a <a href="https://github.com/markteekman/accessible-astro-components"
-        >separate package</a
-      >. They'll get you up and running in building an accessible solution for your visitors.
+      Nexterrain est un projet novateur de téléopération permettant le contrôle à distance d'une voiture radiocommandée via un smartphone ou un ordinateur.
+      <br><br>
+      Notre objectif est de repousser les limites de la connectivité et de la télécommande, offrant une expérience immersive et interactive.
     </p>
-  </ContentMedia>
-  <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
-    <h2>WCAG 2.1 AA Compliant</h2>
-    <p class="text-2xl">
-      Using semantic HTML, landmarks, skip links, screen reader friendly content, aria-labels, keyboard accessible
-      navigation and components, clear outlines and tab indicators and the right color contrast, you're more certain of
-      reaching WCAG AA compliance.
-    </p>
-  </ContentMedia>
-  <section class="mb-32 mt-64">
-    <div class="container">
-      <h2 class="mb-16 text-6xl">Counters</h2>
-      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
-        <Counter count="520" title="Stars" sub="On GitHub" />
-        <Counter count="17" title="Accessible" sub="Components" />
-        <Counter count="500" title="Commits" sub="Merged" />
-        <Counter count="18+" title="Months" sub="Since launch" />
-      </div>
+    <div class="flex flex-col gap-3 min-[500px]:flex-row">
+      <a class="button has-icon" href="/nexterrain">
+        <Icon name="ion:car" />
+        Découvrez notre projet
+      </a>
     </div>
-  </section>
+  </ContentMedia>
+  <ContentMedia imgSrc="/nexterrain/nexterrain-2.WEBP">
+    <h2>Sans limites</h2>
+    <p class="text-2xl">
+      Grâce à Nexterrain, les utilisateurs peuvent piloter la voiture depuis n'importe où, en utilisant simplement leur smartphone ou leur ordinateur, offrant ainsi une nouvelle dimension au plaisir de la conduite radiocommandée.
+      <br><br>
+      Que ce soit pour le plaisir personnel, la compétition entre amis ou des applications plus professionnelles telles que la surveillance à distance, Nexterrain ouvre de nouvelles possibilités passionnantes dans le monde de la téléopération.
+    </p>
+    <div class="flex flex-col gap-3 min-[500px]:flex-row">
+      <a class="button has-icon color-secondary" href="https://calendly.com/vincent-verges/30min">
+        <Icon name="ion:call" />
+        Prenons le temps d'en discuter
+      </a>
+    </div>
+  </ContentMedia>
+  <CallToAction />
 </DefaultLayout>
+
+<style lang="css">
+  .logo-tech {
+    display: flex;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .logo-tech img {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+  }
+
+</style>
