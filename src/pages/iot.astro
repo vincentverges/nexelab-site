@@ -1,11 +1,41 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
-import Hero from '../components/Hero.astro'
-import Feature from '../components/Feature.astro'
-import Counter from '../components/Counter.astro'
+import HeroIot from '../components/HeroIot.astro'
 import ContentMedia from '../components/ContentMedia.astro'
+import { Icon } from 'astro-icon/components'
+import CallToAction from '../components/CallToAction.astro'
 ---
 
 <DefaultLayout title="Mobile">
-<h1>Internet of Things</h1>
+    <HeroIot />
+    <ContentMedia imgSrc="/iot-2.png">
+      <h2>Un projet? Une idée?</h2>
+      <p class="text-2xl">
+        Découvrez notre expertise en développement d'applications <b>IoT</b> et électroniques sur mesure pour répondre à vos besoins uniques.<br><br>
+        Nous maîtrisons les technologies <b>IoT</b> et les modules, nous permettant de concevoir des solutions innovantes et performantes pour nos clients.<br><br>
+        Que ce soit pour un dispositif connecté, un système embarqué ou une application, nous sommes là pour transformer vos idées en réalité.<br><br>
+        Confiez-nous vos projets et laissez-nous vous guider, de la conception à la mise en œuvre, pour vous fournir une solution qui répond parfaitement à vos besoins.<br>
+      </p>
+      <div class="flex flex-col gap-3 min-[500px]:flex-row">
+        <a class="button has-icon" href="https://calendly.com/vincent-verges/30min">
+          <Icon name="ion:call" />
+          Un projet? Discutons-en!
+        </a>
+      </div>
+    </ContentMedia>
+    <ContentMedia imgSrc="/iot-car.png" reverseImg={true}>
+      <h2>Téléopération</h2>
+      <p class="text-2xl">
+        Découvrez notre expertise en téléopération à travers notre projet Nexterrain, révolutionnant le contrôle à distance des véhicules.<br><br>
+        Grâce à notre savoir-faire dans ce domaine, nous sommes en mesure d'offrir des solutions de téléopération sur mesure pour répondre aux besoins spécifiques de nos clients.<br><br>
+        Que ce soit pour la surveillance à distance, le contrôle d'équipements ou toute autre application nécessitant une téléopération fiable et sécurisée, nous sommes là pour fournir des solutions innovantes et efficaces.<br><br>
+    </p>
+      <div class="flex flex-col gap-3 min-[500px]:flex-row">
+        <a class="button has-icon" href="https://calendly.com/vincent-verges/30min">
+          <Icon name="ion:calendar" />
+          Prenez rendez-vous
+        </a>
+      </div>
+    </ContentMedia>
+    <CallToAction />
 </DefaultLayout>

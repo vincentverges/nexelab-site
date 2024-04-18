@@ -9,7 +9,7 @@ const { src = '/home-picture.png' } = Astro.props
     <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start">
         <h1 class="text-center text-6xl md:text-left lg:text-8xl">
-          <slot><span class="text-gradient">Innovation Digitale</span> Mobile, Iot & Web</slot>
+          <slot><span class="text-gradient">Innovation Digitale</span> <div data-typewriter="Mobile,Connectée,Web"></div></slot>
         </h1>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
           <a class="button has-icon" href="https://calendly.com/vincent-verges/30min">
@@ -37,4 +37,79 @@ const { src = '/home-picture.png' } = Astro.props
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  [data-typewriter] {
+    font-family: system-UI;
+    font-weight: bold;
+    font-size: 6rem;
+    color: #fc5fb6;
+    height: 6rem;
+    border-right: .8rem solid transparent;
+    padding: .6rem;
+  }
+
+  [data-typewriter]:not(.typing){
+    animation: blink-caret 1.1s step-end infinite;
+  }
+
+  @keyframes blink-caret {
+    0%,
+    100% {
+      border-color: transparent
+    }
+
+    50% {
+      border-color: #00000000;
+    }
+  }
 </style>
+
+<script>
+  class Typerwriter {
+    constructor(el, options){
+      this.el = el;
+      this.words = [...this.el.dataset.typewriter.split(',')];
+      this.speed = options?.speed || 100;
+      this.delay = options?.delay || 1500;
+      this.repeat = options?.repeat;
+      this.initTyping();
+    }
+
+    wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+
+    toggleTyping = () => this.el.classList.toggle('typing');
+
+    async typewrite(word){
+      await this.wait(this.delay);
+      this.toggleTyping();
+      for (const letter of word.split('')) {
+        this.el.textContent += letter;
+        await this.wait(this.speed)
+      }
+      this.toggleTyping();
+      await this.wait(this.delay);
+      this.toggleTyping();
+      while (this.el.textContent.length !== 0){
+        this.el.textContent = this.el.textContent.slice(0, -1);
+        await this.wait(this.speed)
+      }
+      this.toggleTyping();
+    }
+
+    async initTyping() {
+      for (const word of this.words){
+        await this.typewrite(word);
+      }
+      if(this.repeat){
+        await this.initTyping();
+      } else {
+        this.el.style.animation = 'none';
+      }
+    }
+  }
+
+  document.querySelectorAll('[data-typewriter]').forEach(el => {
+    new Typerwriter(el, {
+      repeat: true,
+    })
+  })
+</script>

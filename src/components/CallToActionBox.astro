@@ -1,0 +1,52 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="container">
+  <div class="call-to-action mt-24 mb-32 flex flex-col items-center gap-12 rounded-xl p-12 md:p-24">
+    <div class="container">
+        <h2 class="mb-16 text-6xl">Prêt à l'emploi</h2>
+        <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-3">
+          <div>
+              <h2>1 - Contactez-nous</h2>
+              <p class="install-desc"><b>Contactez-nous pour découvrir un monde de possibilités infinies. Nous sommes là pour vous guider dans le choix de la meilleure option pour vous ou votre entreprise.</b></p>
+          </div>
+          <div>
+          <h2>2 - Installation</h2>
+          <p class="install-desc"><b>Lorsque nous installons Nexterrain, nous sommes à vos côtés à chaque étape, vous offrant une tranquillité d'esprit totale. Pour nous, la simplicité est essentielle : nous considérons notre travail terminé lorsque vous êtes prêt à piloter !</b></p>
+          </div>
+          <div>
+          <h2>3 - La Course</h2>
+          <p class="install-desc"><b>C'est partis, il ne vous reste plus qu'a courir et utiliser notre systeme pour vous ou vos clients. Let's Race !</b></p>
+          </div>
+        </div>
+      </div>
+    <a href="https://calendly.com/vincent-verges/30min" class="text-center text-lg">
+      Reservez un créneau
+    </a>
+  </div>
+</div>
+
+<style lang="scss">
+  .call-to-action {
+    color: var(--neutral-900);
+    background-image: linear-gradient(40deg, var(--primary-100), var(--secondary-200));
+  }
+
+  .call-to-action a:not(button),
+  .call-to-action a:not(button):visited {
+    padding: 1rem;
+    color: var(--neutral-900);
+    font-weight: bold;
+    border: 3px solid var(--neutral-900);
+    border-radius: 3px;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+    &:where(:hover, :focus) {
+      color: var(--neutral-100);
+      background-color: var(--neutral-900);
+      text-decoration: underline;
+    }
+  }
+</style>

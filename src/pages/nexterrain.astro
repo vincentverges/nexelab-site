@@ -1,11 +1,74 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
-import Hero from '../components/Hero.astro'
+import CallToActionBox from '../components/CallToActionBox.astro'
 import Feature from '../components/Feature.astro'
-import Counter from '../components/Counter.astro'
 import ContentMedia from '../components/ContentMedia.astro'
+import { Icon } from 'astro-icon/components'
+import HeroNexterrain from '../components/HeroNexterrain.astro'
 ---
 
-<DefaultLayout title="Nexterrain">
-    <h1>Nexterrain</h1>
+<DefaultLayout title="Nexterrain Solution">
+  <HeroNexterrain />
+  <ContentMedia imgSrc="/women-sim-racing.webp">
+    <h2>La course devient accessible</h2>
+    <p class="text-2xl">
+        <b>Nexterrain</b> repousse les frontières de la course automobile en vous permettant de participer à des courses réelles depuis votre simulateur. Notre système innovant utilise une technologie éprouvée pour synchroniser votre expérience virtuelle avec la réalité de la piste. 
+        <br><br>
+        Grâce à <b>Nexterrain</b>, vous pouvez ressentir l'adrénaline de la course, prendre part à des compétitions réelles et affronter d'autres pilotes, le tout depuis le confort de votre foyer. Cette approche novatrice rend la course automobile plus accessible que jamais, offrant une expérience immersive et réaliste sans aucune limite.
+        <br><br>
+        De plus, nous proposons des simulateurs spécialement adaptés à cette utilisation, garantissant une expérience de course optimale depuis n'importe où.
+    </p>
+    <br><br>
+    <div class="flex flex-col gap-3 min-[500px]:flex-row">
+      <a class="button has-icon color-secondary" href="https://calendly.com/vincent-verges/30min">
+        <Icon name="mdi:invoice" />
+        Besoin d'un devis ?
+      </a>
+    </div>
+  </ContentMedia>
+  <ContentMedia imgSrc="/ai-nexterrain-box.png" reverseImg={true}>
+    <h2>La Box NEXTERRAIN</h2>
+    <p class="text-2xl">
+        Notre boîtier révolutionne le contrôle des voitures radiocommandées en offrant une connectivité flexible avec les ordinateurs, les simulateurs et les téléphones portables. 
+        <br><br>
+        Il remplace le système traditionnel de radiocommande et permet un contrôle précis et réactif à distance.
+        <br><br>
+        Doté de capteurs avancés, notre boîtier capte les mouvements et les données en temps réel, offrant ainsi des retours haptiques de haute qualité qui enrichissent l'expérience du simulateur.
+        <br><br>
+        Que vous soyez un passionné de course automobile ou un amateur de technologies innovantes, notre boîtier vous permet de vivre une expérience immersive et réaliste, quel que soit votre appareil de contrôle préféré.
+    </p>
+    <br>
+    <div class="flex flex-col gap-3 min-[500px]:flex-row">
+      <a class="button has-icon" href="https://calendly.com/vincent-verges/30min">
+        <Icon name="ion:ios-box" />
+        Interessez par notre BOX
+      </a>
+    </div>
+  </ContentMedia>
+  <section class="my-64">
+    <div class="container">
+      <h2 class="mb-16 text-6xl">Un système Ultra-Rapide</h2>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <Feature icon="mdi:video-4k-box" title="Réolution 4K">
+            Découvrez Nexterrain avec une résolution jusqu'à <b>4K</b>, pour une expérience visuelle exceptionnelle.
+        </Feature>
+        <Feature icon="mdi:car-speed-limiter" title="Rapidité">
+            Profitez d'une latence ultra-faible de seulement <b>50ms</b>, pour une réactivité instantanée lors du contrôle à distance de votre voiture.
+        </Feature>
+        <Feature icon="mdi:hand-left" title="Réalisme">
+            Vivez des sensations ultra-réalistes grâce aux <b>retours haptiques immersifs</b>, vous plongeant au cœur de l'action avec une précision exceptionnelle.
+        </Feature>
+      </div>
+    </div>
+  </section>
+  <CallToActionBox />
 </DefaultLayout>
+
+<style lang="css">
+  .install-desc {
+    margin-top: 1em;
+    font-size: 1.5em;
+    line-height: normal;
+  }
+
+</style>

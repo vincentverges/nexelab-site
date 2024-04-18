@@ -1,11 +1,40 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
-import Hero from '../components/Hero.astro'
-import Feature from '../components/Feature.astro'
-import Counter from '../components/Counter.astro'
+import HeroMobile from '../components/HeroMobile.astro'
 import ContentMedia from '../components/ContentMedia.astro'
+import { Icon } from 'astro-icon/components'
+import CallToAction from '../components/CallToAction.astro'
 ---
 
 <DefaultLayout title="Mobile">
- <h1>Mobile</h1>
+    <HeroMobile />
+    <ContentMedia imgSrc="/android-dev.jpg">
+      <h2>Un projet? Une idée?</h2>
+      <p class="text-2xl">
+        Découvrez notre expertise en développement d'applications mobiles sur mesure pour répondre à vos besoins uniques.<br><br>
+        Chez nous, nous maîtrisons parfaitement les plateformes Android et iOS, nous permettant de concevoir et de créer des applications mobiles innovantes et performantes pour nos clients.<br><br>
+        Que ce soit pour une application native, hybride ou web, nous sommes là pour transformer vos idées en une réalité mobile captivante.<br><br>
+        Confiez-nous vos projets et laissez-nous vous guider à travers chaque étape du processus, de la conception à la mise en œuvre, pour vous fournir une solution mobile qui répond parfaitement à vos besoins et à ceux de votre public cible.<br>
+      </p>
+      <div class="flex flex-col gap-3 min-[500px]:flex-row">
+        <a class="button has-icon" href="https://calendly.com/vincent-verges/30min">
+          <Icon name="ion:call" />
+          Un projet? Discutons-en!
+        </a>
+      </div>
+    </ContentMedia>
+    <ContentMedia imgSrc="/alpin-mobile.png" reverseImg={true}>
+      <h2>Nos Productions</h2>
+      <p class="text-2xl">
+        Nous sommes spécialisés dans la création d'applications sur mesure pour répondre aux besoins uniques de nos clients.<br><br>
+        Que ce soit pour une app de réservation de bateaux électriques ou tout autre projet, nous mettons notre expertise à votre service pour concrétiser votre vision avec excellence.<br><br>
+      </p>
+      <div class="flex flex-col gap-3 min-[500px]:flex-row">
+        <a class="button has-icon" href="https://calendly.com/vincent-verges/30min">
+          <Icon name="ion:calendar" />
+          Prenez rendez-vous
+        </a>
+      </div>
+    </ContentMedia>
+    <CallToAction />
 </DefaultLayout>

@@ -1,11 +1,31 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
-import Hero from '../components/Hero.astro'
-import Feature from '../components/Feature.astro'
-import Counter from '../components/Counter.astro'
 import ContentMedia from '../components/ContentMedia.astro'
+import { Icon } from 'astro-icon/components'
+import CallToAction from '../components/CallToAction.astro'
 ---
 
-<DefaultLayout title="Mobile">
- <h1>À propos de nous</h1>
+<DefaultLayout title="About Us">
+    <ContentMedia imgSrc="/nexelab-team.jpg">
+        <h2>Une équipe à votre écoute</h2>
+        <p class="text-2xl">
+            L'équipe <b>Nexelab</b>, passionnés par la technologie et la simulation sportive, a développé <b>Nexterrain</b>, une solution de contrôle à distance de véhicules. 
+            <br><br>
+            Forts de cette expertise, nous mettons notre savoir-faire au service des idées de nos clients en tant qu'agence, studio et laboratoire dédié à la réalisation de leurs projets numériques</p>
+      </ContentMedia>
+      <ContentMedia imgSrc="/vincent-verges.png" reverseImg={true}>
+        <h2>Fondateur</h2>
+        <p class="text-2xl">
+            En tant que fondateur de <b>Nexelab</b>, Vincent Verges incarne une passion pour l'innovation technologique et automobile.<br><br>
+            Entrepreneur depuis plusierus années, sa transition vers le développement mobile et la création de <b>Nexterrain</b>, une solution de contrôle à distance de véhicules, témoigne de sa capacité à saisir les opportunités du marché.<br><br>
+            Spécialisé dans les applications <b>Mobiles</b> et <b>IoT</b>, il partage également son expertise en tant que formateur, guidant une nouvelle génération de développeurs vers le succès dans le monde numérique.
+        </p>
+        <div class="flex flex-col gap-3 min-[500px]:flex-row">
+          <a class="button has-icon" href="https://www.linkedin.com/in/vincent-verges/">
+            <Icon name="mdi:linkedin" />
+            Profil Linkedin
+          </a>
+        </div>
+      </ContentMedia>
+      <CallToAction />
 </DefaultLayout>

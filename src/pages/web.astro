@@ -1,11 +1,42 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
-import Hero from '../components/Hero.astro'
-import Feature from '../components/Feature.astro'
-import Counter from '../components/Counter.astro'
+import HeroWeb from '../components/HeroWeb.astro'
 import ContentMedia from '../components/ContentMedia.astro'
+import { Icon } from 'astro-icon/components'
+import CallToAction from '../components/CallToAction.astro'
 ---
 
-<DefaultLayout title="Web">
- <h1>Web</h1>
+<DefaultLayout title="Application Web">
+    <HeroWeb />
+    <ContentMedia imgSrc="/front-end.jpg">
+      <h2>Un site ou une application ?</h2>
+      <p class="text-2xl">
+        Découvrez notre expertise en développement d'applications web sur mesure pour répondre à vos besoins uniques.<br><br>
+        Nous maîtrisons les technologies web et les frameworks, nous permettant de concevoir des solutions innovantes et performantes pour nos clients.<br><br>
+        Que ce soit pour un site web, une application web ou tout autre projet en ligne, nous sommes là pour transformer vos idées en réalité numérique.<br><br>
+        Confiez-nous vos projets et laissez-nous vous guider, de la conception à la mise en œuvre, pour vous fournir une solution web qui répond parfaitement à vos besoins.<br>    
+    </p>
+      <div class="flex flex-col gap-3 min-[500px]:flex-row">
+        <a class="button has-icon" href="https://calendly.com/vincent-verges/30min">
+          <Icon name="ion:call" />
+          Un projet? Discutons-en!
+        </a>
+      </div>
+    </ContentMedia>
+    <ContentMedia imgSrc="/back-end.jpg" reverseImg={true}>
+      <h2>Nos compétences</h2>
+      <p class="text-2xl">
+        Découvrez notre expertise en développement web, où nous utilisons des technologies de pointe pour créer des expériences utilisateur exceptionnelles.<br><br>
+        En front-end, nous utilisons Vue.js et Astro pour des interfaces intuitives et réactives.<br><br>
+        Pour le back-end, nous maîtrisons Symfony, Laravel et Ktor pour des architectures robustes.<br><br>
+        En matière de bases de données, nous excellons dans les systèmes SQL, NoSQL et graph, adaptant chaque solution à votre projet.<br><br> 
+    </p>
+      <div class="flex flex-col gap-3 min-[500px]:flex-row">
+        <a class="button has-icon" href="https://calendly.com/vincent-verges/30min">
+          <Icon name="ion:calendar" />
+          Prenez rendez-vous
+        </a>
+      </div>
+    </ContentMedia>
+    <CallToAction />
 </DefaultLayout>

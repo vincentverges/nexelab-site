@@ -1,11 +1,56 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
-import Hero from '../components/Hero.astro'
-import Feature from '../components/Feature.astro'
-import Counter from '../components/Counter.astro'
-import ContentMedia from '../components/ContentMedia.astro'
+import { Icon } from 'astro-icon/components'
 ---
 
 <DefaultLayout title="Mobile">
-    <h1>Contact</h1>
+    <div class="container">
+        <h2 class="mb-16 text-6xl">Nous contacter</h2>
+    <section my-64>
+        <form
+            action="https://formspree.io/f/xrgnrbpq"
+            method="POST"
+        >
+  <label class="mb-16 text-2xl">
+    Votre Email:<br>
+    <input type="email" name="email">
+  </label><br>
+  <label class="mb-16 text-2xl">
+    Votre message:
+    <textarea name="message" cols="25" rows="8" placeholder="  Parlez nous de votre projet !"></textarea>
+  </label>
+  <button type="submit" class="mb-16 text-2xl">C'est parti!</button>
+</form>
+</div>
+        </section>
 </DefaultLayout>
+
+<style>
+    button {
+        display: flex;
+        background-color: darkorchid;
+        border-radius: 1em;
+        font-weight: bold;
+    }
+    .container {
+        margin-top: 3em;
+    }
+    label {
+        font-weight: bold;
+    }
+    textarea {
+        border-radius: 1em;
+        background-color: rgb(221, 221, 221);
+        margin-top: 0.5em;
+        margin-bottom: 2em;
+        color: black;
+    }
+    input {
+        border-radius: 1em;
+        background-color: rgb(221, 221, 221);
+        margin-top: 0.5em;
+        margin-bottom: 1.5em;
+        color: black;
+        padding: 0.5em;
+    }
+</style>
