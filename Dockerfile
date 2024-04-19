@@ -1,11 +1,9 @@
-FROM node:lts-alpine as runtime
-ARG SITE
-
-COPY . /app
+FROM --platform=linux/amd64 node:lts-alpine as runtime
 WORKDIR /app
 
+COPY . .
+
 RUN npm install
-ENV SITE=$SITE
 RUN npm run build
 
 ENV HOST=0.0.0.0
